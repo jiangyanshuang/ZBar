@@ -24,7 +24,7 @@
 #import <ZBarSDK/ZBarReaderViewController.h>
 #import <ZBarSDK/ZBarReaderView.h>
 #import <ZBarSDK/ZBarCaptureReader.h>
-#import <ZBarSDK/ZBarHelpController.h>
+//#import <ZBarSDK/ZBarHelpController.h>
 #import <ZBarSDK/ZBarCameraSimulator.h>
 
 #define MODULE ZBarReaderViewController
@@ -468,9 +468,11 @@ AVSessionPresetForUIVideoQuality (UIImagePickerControllerQualityType quality)
                                           duration: (NSTimeInterval) duration
 {
     zlog(@"willAnimateRotation: orient=%d #%g", orient, duration);
+    /**
     if(helpController)
         [helpController willAnimateRotationToInterfaceOrientation: orient
                         duration: duration];
+     */
     if(readerView)
         [readerView setNeedsLayout];
 }
@@ -555,6 +557,7 @@ AVSessionPresetForUIVideoQuality (UIImagePickerControllerQualityType quality)
 
 - (void) showHelpWithReason: (NSString*) reason
 {
+    /**
     if(helpController)
         return;
     helpController = [[ZBarHelpController alloc]
@@ -570,6 +573,7 @@ AVSessionPresetForUIVideoQuality (UIImagePickerControllerQualityType quality)
             context: nil];
     helpController.view.alpha = 1;
     [UIView commitAnimations];
+     */
 }
 
 - (void) takePicture
@@ -620,7 +624,7 @@ AVSessionPresetForUIVideoQuality (UIImagePickerControllerQualityType quality)
 
 
 // ZBarHelpDelegate
-
+/**
 - (void) helpControllerDidFinish: (ZBarHelpController*) help
 {
     assert(help == helpController);
@@ -643,7 +647,7 @@ AVSessionPresetForUIVideoQuality (UIImagePickerControllerQualityType quality)
         helpController = nil;
     }
 }
-
+*/
 
 // ZBarReaderViewDelegate
 

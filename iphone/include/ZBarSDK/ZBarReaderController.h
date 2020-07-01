@@ -66,7 +66,7 @@ typedef enum {
       UIImagePickerControllerDelegate >
 {
     ZBarImageScanner *scanner;
-    ZBarHelpController *help;
+//    ZBarHelpController *help;
     UIView *overlay, *boxView;
     CALayer *boxLayer;
 

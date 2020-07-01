@@ -22,7 +22,7 @@
 //------------------------------------------------------------------------
 
 #import <ZBarSDK/ZBarReaderController.h>
-#import <ZBarSDK/ZBarHelpController.h>
+//#import <ZBarSDK/ZBarHelpController.h>
 #import "debug.h"
 
 /* the use of UIGetScreenImage() may no longer be sanctioned, even
@@ -168,8 +168,10 @@ CGImageRef UIGetScreenImage(void);
     }
     [infoBtn release];
     infoBtn = nil;
+    /**
     [help release];
     help = nil;
+     */
 }
 
 - (void) viewDidUnload
@@ -579,6 +581,7 @@ CGImageRef UIGetScreenImage(void);
 
 - (void) showHelpWithReason: (NSString*) reason
 {
+    /**
     if(help) {
         [help.view removeFromSuperview];
         [help release];
@@ -608,6 +611,7 @@ CGImageRef UIGetScreenImage(void);
             context: nil];
     help.view.alpha = 1;
     [UIView commitAnimations];
+     */
 }
 
 - (void) info
@@ -680,7 +684,7 @@ CGImageRef UIGetScreenImage(void);
 }
 
 // ZBarHelpDelegate
-
+/**
 - (void) helpControllerDidFinish: (ZBarHelpController*) hlp
 {
     if(self.sourceType == UIImagePickerControllerSourceTypeCamera) {
@@ -693,7 +697,7 @@ CGImageRef UIGetScreenImage(void);
     else
         [hlp dismissModalViewControllerAnimated: YES];
 }
-
+*/
 - (id <NSFastEnumeration>) scanImage: (CGImageRef) image
 {
     timer_start;

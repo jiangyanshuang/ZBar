@@ -55,7 +55,7 @@
     UIImagePickerControllerQualityType videoQuality;
     BOOL showsZBarControls, tracksSymbols, enableCache;
 
-    ZBarHelpController *helpController;
+//    ZBarHelpController *helpController;
     UIView *controls, *shutter;
     BOOL didHideStatusBar, rotating;
     ZBarCameraSimulator *cameraSim;
